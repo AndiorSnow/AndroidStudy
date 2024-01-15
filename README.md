@@ -1,4 +1,4 @@
-# Week 1
+# Week 1: Android Study foundation
 ## Day 1: Kotlin foundation
 2023.11.13
 - basic data type
