@@ -2,27 +2,26 @@ package com.example.yancourse2.components
 
 import android.content.Intent
 import android.content.IntentFilter
-import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class TestBroadCastReceiverActivity:AppCompatActivity() {
-    private lateinit var receiver: TestBroadcastReceiver
+class TestBroadcastRecevierActivity : AppCompatActivity(){
+    private lateinit var myReceiver: TestBroadcastReceiver
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //动态注册，不建议使用静态注册，但是应用自己定义的事件时，可以用静态注册
-        receiver = TestBroadcastReceiver()
-        //创建广播过滤器，指定只接收android.net.conn.CONNECTIVITY_CHANGE的广播事件
+        myReceiver = TestBroadcastReceiver()
+        // Create a broadcast filter that only accepts android.net.conn.CONNECTIVITY_ Chang's broadcast event
         val intentFilter = IntentFilter()
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION)
-        registerReceiver(receiver, intentFilter)
-
-
+        // Add broadcast events that need to be monitored
+        intentFilter.addAction(Intent.ACTION_CONFIGURATION_CHANGED)
+        // Dynamic registration of broadcast receivers
+        registerReceiver(myReceiver, intentFilter)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(receiver)   //必须在onDestroy时反注册，否则会内存泄漏
+        unregisterReceiver(myReceiver)   // It is necessary to unregister during onDestroy, otherwise there will be a memory leak.
     }
 }

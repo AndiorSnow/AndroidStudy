@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    android:background="@color/teal_200"-->
+
+    <!--    Linear Layout-->
+    <!--    android:orientation="horizontal" horizontal -->
+
+    <!--    android:gravity="center_horizontal"   Display sub views centered horizontally-->
+    <!--    android:gravity="center_vertical"     Display sub views centered vertically-->
+    <!--    android:gravity="center"              Display sub views centered in both horizontal and vertical directions -->
+
+    <!--    android:layout_gravity="center_horizontal"    If the alignment and orientation are consistent, it will become invalid-->
+    <!--    layout_weight      If the orientation is horizontal, then the layout of the child controls can be scored using a layout_width ratio, but not layout_height.-->
+    <!--    layout_weight      If the orientation is vertical, then the layout of the child controls can be scored using a layout_height ratio, but not layout_width.-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:backgroundTint="#ff0000 "
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="60dp"/>
+    <Button
+        android:backgroundTint="#ff0000 "
+        android:layout_gravity="center_vertical"
+        android:layout_width="200dp"
+        android:layout_height="60dp"/>
+    <Button
+        android:backgroundTint="#ff0000 "
+        android:layout_width="200dp"
+        android:layout_height="60dp"/>
+    <Button
+        android:backgroundTint="#00ff00 "
+        android:layout_weight="1"
+        android:layout_width="100dp"
+        android:layout_height="0dp"/>
+    <Button
+        android:backgroundTint="#00ff00 "
+        android:layout_weight="2"
+        android:layout_width="100dp"
+        android:layout_height="0dp"/>
+
+</LinearLayout>
